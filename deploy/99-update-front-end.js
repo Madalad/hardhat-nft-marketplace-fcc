@@ -5,11 +5,11 @@ const frontendContractsFile = "../nextjs-nft-marketplace-moralis-fcc/constants/n
 const frontendAbiLocation = "../next-js-nft-marketplace-moralis-fcc/constants/"
 
 module.exports = async function () {
-    if (process.env.UPDATE_FRONT_END) {
+    if (process.env.UPDATE_FRONT_END == "true") {
         console.log("Updating frontend...")
+        await updateContractAddresses()
+        await updateAbi()
     }
-    await updateContractAddresses()
-    await updateAbi()
 }
 
 async function updateAbi() {
